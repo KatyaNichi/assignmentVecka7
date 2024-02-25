@@ -51,7 +51,7 @@ fun BlueSquare() {
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+             horizontalAlignment = Alignment.CenterHorizontally
     ) {
         BlueSquareButtons(
             onXClick = {
@@ -65,6 +65,19 @@ fun BlueSquare() {
         )
         Spacer(modifier = Modifier.height(16.dp))
         MyList(itemList)
+        Spacer(modifier = Modifier.weight(1f))
+
+        Button(
+            onClick = {
+                Log.d("ButtonClick", "Reset button clicked")
+                itemList = emptyList()
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Text("Reset")
+        }
     }
 }
 
